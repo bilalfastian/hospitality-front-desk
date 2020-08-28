@@ -4,22 +4,13 @@ import React from 'react';
 // import { setLocale } from 'store/app/actions';
 // import { Locale } from 'store/app/types';
 
-const App: React.FC<any> = () => {
-    // const { t } = useTranslation();
-    // const dispatch = useDispatch();
-    // const handleLocaleChange = useCallback(
-    //     (e: React.FormEvent<HTMLButtonElement>) => {
-    //         dispatch(setLocale(e.currentTarget.value as Locale));
-    //     },
-    //     [dispatch]
-    // );
-
+function App() {
     return (
         <React.Fragment>
             {/*<h2>{t('i18n-example')}</h2>*/}
             <h1>Hello World!</h1>
         </React.Fragment>
     );
-};
+}
 
 export default App;

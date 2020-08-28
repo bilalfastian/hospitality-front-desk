@@ -6,7 +6,6 @@ import { Route, Switch } from 'react-router-dom';
 import favicon from '../shared/assets/favicon.png';
 import Home from './pages/Home';
 import Login from './pages/Login';
-import Page2 from './pages/Page-2';
 import routes from './routes';
 import css from './App.module.css';
 
@@ -30,7 +29,6 @@ const App: React.FC<any> = () => {
             <Switch>
                 <Route exact path={routes.home} component={Home} />
                 <Route exact path={routes.login} component={Login} />
-                <Route exact path={routes.page2} component={Page2} />
                 <Route render={() => '404!'} />
             </Switch>
         </div>
