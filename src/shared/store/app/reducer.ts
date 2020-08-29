@@ -4,6 +4,7 @@ import { Action, AppState } from './types';
 
 export const initialState = Object.freeze<AppState>({
     locale: 'en_US',
+    session: '',
 });
 
 export default (state: AppState = initialState, action: Action): AppState =>
