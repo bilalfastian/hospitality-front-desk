@@ -5,6 +5,7 @@ import cors from 'cors';
 import chalk from 'chalk';
 import manifestHelpers from 'express-manifest-helpers';
 import bodyParser from 'body-parser';
+import ParseDashboard from 'parse-dashboard';
 import paths from '../../config/paths';
 // import { configureStore } from '../shared/store';
 import errorHandler from './middleware/errorHandler';
@@ -37,6 +38,20 @@ const parseServer = new ParseServer({
     graphQLSchema: './src/server/cloud/schema.graphql',
     serverURL: 'http://localhost:1337/parse', // Don't forget to change to https if needed
 });
+
+const dashboard = new ParseDashboard({
+    apps: [
+        {
+            serverURL: 'http://localhost:1337/parse',
+            appId: 'myAppId',
+            masterKey: 'myMasterKey', // Keep this key secret!
+            appName: 'MyApp',
+        },
+    ],
+});
+
+// make the Parse Dashboard available at /dashboard
+app.use('/dashboard', dashboard);
 
 app.use(bodyParser.json());
 
