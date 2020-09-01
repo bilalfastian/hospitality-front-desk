@@ -1,24 +1,24 @@
 import React from 'react';
 import { Formik, Field, Form } from 'formik';
-// import { useQuery, gql } from '@apollo/client';
+import { useQuery, gql } from '@apollo/client';
 
-// const LOGIN_QUERY = gql`
-//     {
-//         rates(currency: "USD") {
-//             currency
-//             rate
-//         }
-//     }
-// `;
+const LOGIN_QUERY = gql`
+    {
+        rates(currency: "USD") {
+            currency
+            rate
+        }
+    }
+`;
 export default function LoginForm() {
-    // const { loading, error, data } = useQuery(LOGIN_QUERY);
+    const { loading, error, data } = useQuery(LOGIN_QUERY);
 
-    // if (loading) {
-    //     return <p>Loading...</p>;
-    // }
-    // if (error) {
-    //     return <p>Error :(</p>;
-    // }
+    if (loading) {
+        return <p>Loading...</p>;
+    }
+    if (error) {
+        return <p>Error :(</p>;
+    }
 
     // const sessionToken = data.health;
     return (
