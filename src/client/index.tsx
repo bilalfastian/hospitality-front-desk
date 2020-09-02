@@ -29,11 +29,11 @@ hydrate(
     <Provider store={store}>
         <Router history={history}>
             <IntlProvider>
-                <HelmetProvider>
-                    <ApolloProvider client={client}>
+                <ApolloProvider client={client}>
+                    <HelmetProvider>
                         <App />
-                    </ApolloProvider>
-                </HelmetProvider>
+                    </HelmetProvider>
+                </ApolloProvider>
             </IntlProvider>
         </Router>
     </Provider>,
